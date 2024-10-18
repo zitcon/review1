@@ -7,7 +7,7 @@ const Book =  require('../models/book.model');
 router.get('/', async(req, res) => {
   try{
     const books = await  Book.find();
-
+    res.render('book/index', { books })
   }catch(err){
     console.log(`Error:${err}`);
   }
